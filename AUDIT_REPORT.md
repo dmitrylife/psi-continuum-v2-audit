@@ -28,9 +28,9 @@ $$
 Frozen code instead implements a normalized modified E²(z) law that
 enforces HΨ(0)=H₀ for every ε. The ΛCDM null limit
 passes exactly, but non-zero ε does not reproduce the published
-equation. At H₀=70, ε=0.03, frozen code gives
-(HΨ(0)=70), while the published equation gives 72.1 km s⁻¹
-Mpc⁻¹.
+equation. At the adopted reference value HΛ(0)=70 km s⁻¹ Mpc⁻¹
+and ε=0.03, the frozen code gives HΨ(0)=70 km s⁻¹ Mpc⁻¹, while
+the published equation gives HΨ(0)=72.1 km s⁻¹ Mpc⁻¹.
 
 **Conclusion:** the frozen ΨCDM background implementation is
 inconsistent with the published v2 defining equation.
