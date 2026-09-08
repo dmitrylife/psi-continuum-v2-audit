@@ -19,6 +19,7 @@ fiducial sound-horizon convention mismatch is also confirmed.
 DEFINING EQUATION**
 
 Published v2 defines 
+
 $$
 H_\Psi(z)=H_\Lambda(z)\left(1+\frac{\varepsilon_0}{1+z}\right).
 $$
@@ -72,12 +73,15 @@ For 1701 Pantheon+ Hubble-flow entries with the frozen full covariance,
 $$
 \chi^2_{\Lambda\mathrm{CDM}}=2609.19713024.
 $$
+
  The frozen scan over
 (-0.1≤ε₀≤0.1) reaches its lower
 boundary at ε=-0.100 with 
+
 $$
 \chi^2=2593.27825030,\qquad \Delta\chi^2=-15.91888.
 $$
+
  Using the literal published background in the same raw frozen
 likelihood gives a radically different curve, with an unprofiled minimum
 near ε=+0.055 and (Δχ²≈-831.60).
@@ -322,14 +326,17 @@ mismatch in the BAO model vector.
 PUBLISHED-SPEC STATISTICAL MISMATCH CONFIRMED**
 
 The frozen ΛCDM BAO likelihood is reproduced: 
+
 $$
 \chi^2=11.140641849565,
 $$
+
  agreeing with the historical frozen
 reference to (4.35×10^{-10}).
 
 Applying the BOSS fiducial sound-horizon convention while retaining the
 frozen background gives 
+
 $$
 \chi^2=7.951527983437,
 \qquad
@@ -339,11 +346,14 @@ $$
 
 For the ε scan, frozen raw and convention-corrected frozen backgrounds
 both decrease toward the positive scan boundary: 
+
 $$
 \varepsilon_{0,\mathrm{best}}^{\mathrm{frozen}}=+0.100,\quad
 \Delta\chi^2=-0.93081,
 $$
+
  and 
+
 $$
 \varepsilon_{0,\mathrm{best}}^{\mathrm{frozen,corr}}=+0.100,\quad
 \Delta\chi^2=-0.57272.
@@ -352,6 +362,7 @@ $$
 
 With the literal published-v2 background and the same corrected BOSS
 convention, the behaviour changes qualitatively: 
+
 $$
 \varepsilon_{0,\mathrm{best}}^{\mathrm{published}}\simeq-0.023,\quad
 \chi^2_{\mathrm{best}}=3.01799833,\quad
