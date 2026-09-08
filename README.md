@@ -65,8 +65,8 @@ The reconstructed frozen joint minimum is
 
 
 $$
-\varepsilon*{0,\rm best}=+0.075,\qquad
-\chi^2*{\mathrm{min}}=2665.510865815413,\qquad
+\varepsilon_{0,\mathrm{best}}=+0.075,\qquad
+\chi^2_{\mathrm{min}}=2665.510865815413,\qquad
 \Delta\chi^2=-6.912211839815.
 $$
 

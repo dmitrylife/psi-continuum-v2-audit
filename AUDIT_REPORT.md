@@ -116,7 +116,7 @@ tested interval becomes
 
 $$
 \varepsilon*0 = -0.100, \qquad
-\Delta\chi^2*{\rm prof} = -12.769.
+\Delta\chi^2_{\mathrm{prof}} = -12.769.
 $$
 
 
@@ -132,18 +132,18 @@ particular, the raw published-spec minimum at
 
 $$
 H_\Psi(0) = H_\Lambda(0)(1+\varepsilon_0)
-= 73.85 {\rm km\,s^{-1}\,Mpc^{-1}}
+= 73.85 \mathrm{km\,s^{-1}\,Mpc^{-1}}
 $$
 
 
 for the adopted baseline
-(H_\Lambda(0)=70 {\rm km\,s^{-1}\,Mpc^{-1}}).
+(H_\Lambda(0)=70 \mathrm{km\,s^{-1}\,Mpc^{-1}}).
 
 A residual redshift-dependent effect remains after removal of the global
 offset. The published-spec model reaches
-(\Delta\chi^2_{\rm prof}\simeq-12.77),
+(\Delta\chi^2_{\mathrm{prof}}\simeq-12.77),
 whereas the frozen implementation reaches only
-(\Delta\chi^2_{\rm prof}\simeq-1.40)
+(\Delta\chi^2_{\mathrm{prof}}\simeq-1.40)
 over the same $\varepsilon_0$ interval. Therefore, the
 discrepancy between the published equation and the frozen implementation
 cannot be attributed solely to their different normalization at (z=0);
@@ -176,7 +176,7 @@ The frozen ΛCDM result is
 
 
 $$
-\chi^2_{\Lambda{\rm CDM}} = 11.78688559,
+\chi^2_{\Lambda\mathrm{CDM}} = 11.78688559,
 $$
 
 
@@ -184,8 +184,8 @@ and the frozen ΨCDM implementation gives
 
 
 $$
-\varepsilon*{0,\rm best}^{\rm frozen}=+0.055,
-\qquad \chi^2*{\mathrm{best}}=11.74585998,
+\varepsilon_{0,\mathrm{best}}^{\mathrm{frozen}}=+0.055,
+\qquad \chi^2_{\mathrm{best}}=11.74585998,
 \qquad \Delta\chi^2=-0.04103.
 $$
 
@@ -209,8 +209,8 @@ Under the published equation, the minimum occurs at
 
 
 $$
-\varepsilon*{0,\rm best}^{\rm published}=0,
-\qquad \chi^2*{\mathrm{best}}=11.78688559,
+\varepsilon_{0,\mathrm{best}}^{\mathrm{published}}=0,
+\qquad \chi^2_{\mathrm{best}}=11.78688559,
 \qquad \Delta\chi^2=0.
 $$
 
@@ -253,7 +253,7 @@ The corresponding published BOSS observables are
 
 
 $$
-D_M(z)\frac{r_{s,\rm fid}}{r_s(z_d)}
+D_M(z)\frac{r_{s,\mathrm{fid}}}{r_s(z_d)}
 $$
 
 
@@ -261,7 +261,7 @@ and
 
 
 $$
-H(z)\frac{r_s(z_d)}{r_{s,\rm fid}},
+H(z)\frac{r_s(z_d)}{r_{s,\mathrm{fid}}},
 $$
 
 
@@ -269,7 +269,7 @@ with
 
 
 $$
-r_{s,\rm fid}=147.78 {\rm Mpc}.
+r_{s,\mathrm{fid}}=147.78 \mathrm{Mpc}.
 $$
 
 
@@ -290,9 +290,9 @@ without applying the BOSS fiducial sound-horizon factors
 
 
 $$
-\frac{r_{s,\rm fid}}{r_s}
+\frac{r_{s,\mathrm{fid}}}{r_s}
 \quad\text{and}\quad
-\frac{r_s}{r_{s,\rm fid}}.
+\frac{r_s}{r_{s,\mathrm{fid}}}.
 $$
 
 
@@ -301,7 +301,7 @@ published BOSS likelihood only in the special case
 
 
 $$
-r_s=r_{s,\rm fid}.
+r_s=r_{s,\mathrm{fid}}.
 $$
 
 
@@ -333,19 +333,19 @@ frozen background gives
 $$
 \chi^2=7.951527983437,
 \qquad
-\Delta\chi^2_{\rm convention}=-3.189113866128.
+\Delta\chi^2_{\mathrm{convention}}=-3.189113866128.
 $$
 
 
 For the ε scan, frozen raw and convention-corrected frozen backgrounds
 both decrease toward the positive scan boundary: 
 $$
-\varepsilon*{0,\rm best}^{\rm frozen}=+0.100,\quad
+\varepsilon_{0,\mathrm{best}}^{\mathrm{frozen}}=+0.100,\quad
 \Delta\chi^2=-0.93081,
 $$
  and 
 $$
-\varepsilon*{0,\rm best}^{\rm frozen,corr}=+0.100,\quad
+\varepsilon_{0,\mathrm{best}}^{\mathrm{frozen,corr}}=+0.100,\quad
 \Delta\chi^2=-0.57272.
 $$
 
@@ -353,8 +353,8 @@ $$
 With the literal published-v2 background and the same corrected BOSS
 convention, the behaviour changes qualitatively: 
 $$
-\varepsilon*{0,\rm best}^{\rm published}\simeq-0.023,\quad
-\chi^2*{\mathrm{best}}=3.01799833,\quad
+\varepsilon_{0,\mathrm{best}}^{\mathrm{published}}\simeq-0.023,\quad
+\chi^2_{\mathrm{best}}=3.01799833,\quad
 \Delta\chi^2=-4.93353.
 $$
 
@@ -382,7 +382,7 @@ precision:
 
 
 $$
-\chi^2_{\Lambda{\rm CDM}}=40.298419969637.
+\chi^2_{\Lambda\mathrm{CDM}}=40.298419969637.
 $$
 
 
@@ -395,7 +395,7 @@ positive scan boundary,
 
 
 $$
-\varepsilon_{0,\rm best}^{\rm frozen}=+0.100,\qquad
+\varepsilon_{0,\mathrm{best}}^{\mathrm{frozen}}=+0.100,\qquad
 \chi^2=20.62428459,\qquad
 \Delta\chi^2=-19.67414,
 $$
@@ -409,7 +409,7 @@ minimum near
 
 
 $$
-\varepsilon_{0,\rm best}^{\rm published}\simeq-0.022,\qquad
+\varepsilon_{0,\mathrm{best}}^{\mathrm{published}}\simeq-0.022,\qquad
 \chi^2=12.32747374,\qquad
 \Delta\chi^2=-27.97095.
 $$
@@ -459,10 +459,10 @@ components are
 
 
 $$
-\chi^2_{\rm SN}=2609.197130241862,\quad
+\chi^2_{\mathrm{SN}}=2609.197130241862,\quad
 \chi^2_{H(z)}=11.786885594164,\quad
-\chi^2_{\rm SDSS}=11.140641849565,\quad
-\chi^2_{\rm DESI}=40.298419969637,
+\chi^2_{\mathrm{SDSS}}=11.140641849565,\quad
+\chi^2_{\mathrm{DESI}}=40.298419969637,
 $$
 
 
@@ -490,7 +490,7 @@ The complete frozen scan has its minimum at
 
 
 $$
-\boxed{\varepsilon_{0,\rm best}^{\rm frozen}=+0.075}
+\boxed{\varepsilon_{0,\mathrm{best}}^{\mathrm{frozen}}=+0.075}
 $$
 
 
@@ -508,10 +508,10 @@ minimum are
 
 
 $$
-\Delta\chi^2_{\rm SN}=+10.93035,\quad
+\Delta\chi^2_{\mathrm{SN}}=+10.93035,\quad
 \Delta\chi^2_{H(z)}=-0.03468,\quad
-\Delta\chi^2_{\rm SDSS}=-0.72923,\quad
-\Delta\chi^2_{\rm DESI}=-17.07866.
+\Delta\chi^2_{\mathrm{SDSS}}=-0.72923,\quad
+\Delta\chi^2_{\mathrm{DESI}}=-17.07866.
 $$
 
 
@@ -552,10 +552,10 @@ This number must **not** be interpreted as evidence for the published
 
 
 $$
-\Delta\chi^2_{\rm SN}=-785.163,\quad
+\Delta\chi^2_{\mathrm{SN}}=-785.163,\quad
 \Delta\chi^2_{H(z)}=+1.036,\quad
-\Delta\chi^2_{\rm SDSS}=+31.091,\quad
-\Delta\chi^2_{\rm DESI}=+183.856.
+\Delta\chi^2_{\mathrm{SDSS}}=+31.091,\quad
+\Delta\chi^2_{\mathrm{DESI}}=+183.856.
 $$
 
 
