@@ -4,7 +4,7 @@ Independent reproducibility and model-consistency audit of the frozen
 **Ψ-Continuum v2 (v0.2.3)** numerical implementation.
 
 > **Main finding:** the frozen v2 numerical pipeline is internally
-> reproducible, but the non-zero-$\varepsilon_0$ ΨCDM
+> reproducible, but the non-zero-ε₀ ΨCDM
 > background implemented in the frozen code is not mathematically
 > equivalent to the defining equation documented for v2.
 
@@ -20,7 +20,7 @@ The audit checks the full numerical chain used by v2:
 -   cosmological distances;
 -   Pantheon+ supernova likelihood;
 -   supernova calibration sensitivity;
--   $H(z)$ / Cosmic Chronometers;
+-   H(z) / Cosmic Chronometers;
 -   SDSS/BOSS DR12 BAO;
 -   DESI DR2 BAO;
 -   complete joint likelihood reconstruction.
@@ -40,11 +40,11 @@ H_\Psi(z)=H_\Lambda(z)\left(1+\frac{\varepsilon_0}{1+z}\right).
 $$
 
 
-The frozen implementation instead uses a normalized modified-$E^2$
-prescription that enforces $H_\Psi(0)=H_0$ for every
-$\varepsilon_0$. Both formulations recover the same ΛCDM limit
-at $\varepsilon_0=0$, but they are not equivalent for non-zero
-$\varepsilon_0$.
+The frozen implementation instead uses a normalized modified-E²
+prescription that enforces HΨ(0)=H₀ for every
+ε₀. Both formulations recover the same ΛCDM limit
+at ε₀=0, but they are not equivalent for non-zero
+ε₀.
 
 ## Main results
 
@@ -76,13 +76,13 @@ failure in the frozen software.
 
 ### 2. Published equation and frozen implementation differ
 
-For non-zero $\varepsilon_0$, the implemented background
+For non-zero ε₀, the implemented background
 expansion differs from the documented v2 equation. This discrepancy
 propagates into cosmological distances and materially changes the
-likelihood curves for Pantheon+ SN, $H(z)$, SDSS/BOSS DR12, DESI DR2,
+likelihood curves for Pantheon+ SN, H(z), SDSS/BOSS DR12, DESI DR2,
 and the joint analysis.
 
-Consequently, non-zero-$\varepsilon_0$ preferences obtained
+Consequently, non-zero-ε₀ preferences obtained
 from the frozen pipeline describe the **implemented frozen model**, not
 the documented v2 defining equation.
 
@@ -90,9 +90,9 @@ the documented v2 defining equation.
 
 The frozen SDSS/BOSS model vector does not explicitly apply the standard
 fiducial sound-horizon factors associated with the DR12 consensus
-observables. The frozen code uses $r_d=147.0$ Mpc, whereas the fiducial
+observables. The frozen code uses r_d=147.0 Mpc, whereas the fiducial
 value associated with the BOSS DR12 vector is
-$r_{d,\mathrm{fid}}=147.78$ Mpc.
+r_d,fid=147.78 Mpc.
 
 This produces a smaller but genuine and numerically non-negligible BAO
 convention mismatch.
@@ -101,7 +101,7 @@ convention mismatch.
 
 Substituting the literal documented equation into the frozen raw SN
 likelihood produces a very large apparent improvement in
-$\chi^2$. A diagnostic profiling of one global additive
+χ². A diagnostic profiling of one global additive
 distance-modulus offset removes approximately **98.46%** of this raw
 improvement.
 
@@ -131,7 +131,7 @@ equation.
                           diagnostic              CONFIRMED / BEST-FIT
                                                   UNRESOLVED**
 
-  05                      $H(z)$                  **FROZEN PASS /
+  05                      H(z)                  **FROZEN PASS /
                                                   PUBLISHED-SPEC
                                                   MISMATCH**
 
@@ -207,7 +207,7 @@ The central audit result is:
 > **INTERNAL NUMERICAL REPRODUCIBILITY CONFIRMED / PUBLISHED
 > MODEL-IMPLEMENTATION MISMATCH CONFIRMED**
 
-The frozen joint minimum at (\varepsilon_0=+0.075) is
+The frozen joint minimum at (ε₀=+0.075) is
 reproducible, but it is a result for the background model actually
 implemented by the frozen code. It must not be presented as a likelihood
 result for the documented v2 equation.
