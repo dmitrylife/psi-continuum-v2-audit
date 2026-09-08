@@ -115,7 +115,7 @@ tested interval becomes
 
 
 $$
-\varepsilon*0 = -0.100, \qquad
+\varepsilon_0 = -0.100, \qquad
 \Delta\chi^2_{\mathrm{prof}} = -12.769.
 $$
 
@@ -643,9 +643,9 @@ $$
 Therefore the principal problem is not an inability to reproduce the
 frozen software output.
 
-Second, the \*\*non-zero-$\varepsilon_0$ model implemented by
+Second, the **non-zero-$\varepsilon_0$ model implemented by
 the frozen software is not the model defined by the published v2
-equation\*\*,
+equation**,
 
 
 $$
