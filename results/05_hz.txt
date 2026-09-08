@@ -1,0 +1,135 @@
+==============================================================================
+PSI-CONTINUUM v2 — INDEPENDENT AUDIT
+AUDIT 05: H(z) / COSMIC CHRONOMETERS
+==============================================================================
+
+Frozen repository : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+Data directory    : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2/data/hz
+N_Hz              : 32
+H0                : 70.0
+Omega_m           : 0.3
+n                 : 1.0
+eps grid points   : 81
+eps range         : -0.2000 .. +0.2000
+
+z range           : 0.070000 .. 1.965000
+H_obs range       : 68.600000 .. 202.000000
+
+------------------------------------------------------------------------------
+TEST 1 — Reproduce frozen LCDM H(z) result
+------------------------------------------------------------------------------
+
+N_Hz                 = 32
+frozen chi2_LCDM     = 11.786885594164
+independent chi2     = 11.786885594164
+reference chi2_LCDM  = 11.786885590000
+frozen-independent   = +0.000000000000e+00
+frozen-reference     = +4.163627664866e-09
+
+TEST 1 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 2 — Frozen and published eps0=0 null limits
+------------------------------------------------------------------------------
+
+max |H_frozen(eps=0)-H_LCDM|    = 0.000000000000e+00
+max |H_published(eps=0)-H_LCDM| = 0.000000000000e+00
+chi2_LCDM            = 11.786885594164
+chi2_frozen(eps=0)   = 11.786885594164
+chi2_published(eps=0)= 11.786885594164
+
+TEST 2 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 3 — Reproduce frozen H(z) eps0 scan
+------------------------------------------------------------------------------
+
+computed best eps0 = +0.055000
+computed best chi2 = 11.745859980240
+computed Delta chi2 = -0.041025613923
+minimum boundary   = NO
+
+reference best eps0 = +0.055000
+reference best chi2 = 11.745859980000
+
+TEST 3 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 4 — Published-v2 equation H(z) scan
+------------------------------------------------------------------------------
+
+best eps0        = +0.000000
+best chi2        = 11.786885594164
+Delta chi2       = +0.000000000000
+minimum boundary = NO
+
+------------------------------------------------------------------------------
+TEST 5 — Frozen vs published H(z) likelihood
+------------------------------------------------------------------------------
+
+    eps0      chi2_frozen         chi2_pub       pub-frozen       Dchi2_fr      Dchi2_pub
+--------------------------------------------------------------------------------------------
+  -0.200      12.96198231      39.24524978     +26.28326747    +1.17509672   +27.45836419
+  -0.100      12.13392166      18.77114671      +6.63722506    +0.34703606    +6.98426112
+  -0.050      11.91074355      13.59278591      +1.68204236    +0.12385796    +1.80590032
+  +0.000      11.78688559      11.78688559      +0.00000000    +0.00000000    +0.00000000
+  +0.030      11.75329617      12.32212644      +0.56883027    -0.03358943    +0.53524084
+  +0.050      11.74593988      13.35344576      +1.60750588    -0.04094571    +1.56656017
+  +0.055      11.74585998      13.69558711      +1.94972713    -0.04102561    +1.90870151
+  +0.075      11.75220909      15.40139853      +3.64918944    -0.03467650    +3.61451294
+  +0.100      11.77428652      18.29246642      +6.51817990    -0.01259908    +6.50558083
+  +0.200      11.99529022      38.28788919     +26.29259897    +0.20840463   +26.50100360
+
+------------------------------------------------------------------------------
+TEST 6 — Pointwise H(z) model differences
+------------------------------------------------------------------------------
+
+eps0=+0.030: max |H_pub-H_frozen| = 3.44193345, max |relative difference| = 2.80127525e-02
+eps0=+0.055: max |H_pub-H_frozen| = 6.27451441, max |relative difference| = 5.13564661e-02
+eps0=+0.075: max |H_pub-H_frozen| = 8.51823061, max |relative difference| = 7.00312836e-02
+eps0=-0.050: max |H_pub-H_frozen| = 5.84723643, max |relative difference| = 4.66886933e-02
+
+------------------------------------------------------------------------------
+TEST 7 — H(0) normalization semantics
+------------------------------------------------------------------------------
+
+    eps0      H0_frozen     H0_published
+------------------------------------------
+  -0.100      70.000000        63.000000
+  +0.000      70.000000        70.000000
+  +0.055      70.000000        73.850000
+  +0.100      70.000000        77.000000
+
+------------------------------------------------------------------------------
+TEST 8 — Statistical impact of implementation mismatch
+------------------------------------------------------------------------------
+
+Frozen best eps0     = +0.055000
+Published best eps0  = +0.000000
+Best-eps shift       = -0.055000
+
+Frozen best Delta chi2    = -0.041025613923
+Published best Delta chi2 = +0.000000000000
+
+Maximum |chi2_pub-chi2_frozen| = 26.292598972487
+at eps0 = +0.200000
+
+Same best eps0 = NO
+Same chi2 curve = NO
+
+==============================================================================
+AUDIT 05 SUMMARY
+==============================================================================
+
+Frozen H(z) dataset/likelihood reproduction: PASS
+eps0=0 null limit: PASS
+Frozen H(z) scan reproduction: PASS
+
+FROZEN H(z) PIPELINE: PASS
+
+PUBLISHED-SPEC IMPACT ON H(z): DETECTED
+Replacing the frozen PsiCDM H(z) relation by the published v2 defining equation changes the H(z) chi2(eps0) curve.
+
+
+NOTE: The H(z) dataset, observational uncertainties, diagonal chi2 definition, H0, Omega_m, n, and eps0 scan are identical in the frozen and published-spec calculations. Only the PsiCDM H(z) relation is changed.
+==============================================================================

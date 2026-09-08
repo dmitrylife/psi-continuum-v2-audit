@@ -1,0 +1,440 @@
+==============================================================================
+PSI-CONTINUUM v2 — INDEPENDENT AUDIT
+AUDIT 02: IMPLEMENTATION TRACE
+==============================================================================
+
+Frozen repository : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+Package root      : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2/psi_continuum_v2
+Python files      : 54
+
+------------------------------------------------------------------------------
+TEST 1 — PsiCDM function definitions
+------------------------------------------------------------------------------
+DM_psicdm       psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:31
+E_psicdm        psi_continuum_v2/cosmology/background/psicdm.py:8
+H_psicdm        psi_continuum_v2/cosmology/background/psicdm.py:31
+dL_psicdm       psi_continuum_v2/cosmology/background/psicdm.py:38
+DM_psicdm       psi_continuum_v2/cosmology/background/psicdm.py:69
+DH_psicdm       psi_continuum_v2/cosmology/background/psicdm.py:78
+
+E_psicdm        definitions = 1
+H_psicdm        definitions = 1
+dL_psicdm       definitions = 1
+DM_psicdm       definitions = 2
+DH_psicdm       definitions = 1
+
+------------------------------------------------------------------------------
+TEST 2 — References to PsiCDM background functions
+------------------------------------------------------------------------------
+
+[E_psicdm]
+  psi_continuum_v2/analysis/check/check_models.py:28
+      from psi_continuum_v2.cosmology.background.psicdm import E_psicdm, H_psicdm, dL_psicdm
+  psi_continuum_v2/analysis/check/check_models.py:109
+      E_p = E_psicdm(z, psi0)
+  psi_continuum_v2/analysis/check/check_models.py:189
+      E_p = E_psicdm(z, p)
+  psi_continuum_v2/analysis/check/check_models.py:208
+      E_p_test = E_psicdm(z, p_test)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:61
+      E_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:188
+      Ez_p = E_psicdm(z, psicdm)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:619
+      E_p = E_psicdm(z, psi)
+  psi_continuum_v2/cosmology/background/__init__.py:21
+      E_psicdm,
+  psi_continuum_v2/cosmology/background/__init__.py:36
+      "E_psicdm",
+  psi_continuum_v2/cosmology/background/psicdm.py:8
+      def E_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  psi_continuum_v2/cosmology/background/psicdm.py:35
+      return params.H0 * E_psicdm(z, params)
+  psi_continuum_v2/cosmology/background/psicdm.py:53
+      inv_E = 1.0 / E_psicdm(z_grid, params)
+
+[H_psicdm]
+  psi_continuum_v2/analysis/check/check_models.py:28
+      from psi_continuum_v2.cosmology.background.psicdm import E_psicdm, H_psicdm, dL_psicdm
+  psi_continuum_v2/analysis/check/check_models.py:112
+      H_p = H_psicdm(z, psi0)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:32
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:32
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:76
+      Hz_model = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:92
+      Hm = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:125
+      preds.append(DH_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:128
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:62
+      H_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:65
+      DH_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:393
+      DH_p = DH_psicdm(z_model, psicdm) / psicdm.rd
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:449
+      H_p = H_psicdm(z_model, psicdm)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:647
+      chi2_psi.append(chi2_hz(hzdata, H_psicdm, psi))
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:33
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:33
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:71
+      Hmodel = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:87
+      Hz = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:123
+      preds.append(DH_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:126
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:21
+      from psi_continuum_v2.cosmology.background.psicdm import H_psicdm, dL_psicdm
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:48
+      H = H_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:38
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:38
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:86
+      Hmodel = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:102
+      H_model = H_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:127
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/tests/hz_test_psicdm.py:18
+      from psi_continuum_v2.cosmology.background.psicdm import H_psicdm
+  psi_continuum_v2/analysis/tests/hz_test_psicdm.py:68
+      chi2_vals.append(chi2_hz(hzdata, H_psicdm, params))
+  psi_continuum_v2/analysis/tests/hz_test_psicdm.py:95
+      H_PSI_plot = H_psicdm(z_plot, psi_params)
+  psi_continuum_v2/cosmology/background/__init__.py:22
+      H_psicdm,
+  psi_continuum_v2/cosmology/background/__init__.py:37
+      "H_psicdm",
+  psi_continuum_v2/cosmology/background/psicdm.py:31
+      def H_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  psi_continuum_v2/cosmology/background/psicdm.py:78
+      def DH_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  psi_continuum_v2/cosmology/background/psicdm.py:84
+      return C_LIGHT / H_psicdm(z, params)
+
+[dL_psicdm]
+  psi_continuum_v2/analysis/check/check_models.py:28
+      from psi_continuum_v2.cosmology.background.psicdm import E_psicdm, H_psicdm, dL_psicdm
+  psi_continuum_v2/analysis/check/check_models.py:115
+      dL_p = dL_psicdm(z, psi0)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:32
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:59
+      dL = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:63
+      dL_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:217
+      mu_p = 5 * np.log10(dL_psicdm(z, psicdm)) + 25
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:221
+      mu_p_s = 5 * np.log10(dL_psicdm(z_smooth, psicdm)) + 25
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:33
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:54
+      dL = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:86
+      dL = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:21
+      from psi_continuum_v2.cosmology.background.psicdm import H_psicdm, dL_psicdm
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:32
+      return dL_psicdm(z, params) / (1.0 + z)
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:38
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:68
+      dL = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:101
+      dL = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/tests/sn_test_psicdm_pplus.py:16
+      from psi_continuum_v2.cosmology.background.psicdm import dL_psicdm
+  psi_continuum_v2/analysis/tests/sn_test_psicdm_pplus.py:66
+      dL_p = dL_psicdm(z, psicdm_params)
+  psi_continuum_v2/cosmology/background/__init__.py:23
+      dL_psicdm,
+  psi_continuum_v2/cosmology/background/__init__.py:38
+      "dL_psicdm",
+  psi_continuum_v2/cosmology/background/psicdm.py:38
+      def dL_psicdm(z: np.ndarray, params: PsiCDMParams, nz: int = 4000) -> np.ndarray:
+  psi_continuum_v2/cosmology/background/psicdm.py:75
+      return dL_psicdm(z, params) / (1.0 + z)
+
+[DM_psicdm]
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:32
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:91
+      DMm = DM_psicdm(z, psicdm_params)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:123
+      preds.append(DM_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:127
+      DMv = DM_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:64
+      DM_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:392
+      DM_p = DM_psicdm(z_model, psicdm) / psicdm.rd
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:33
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:121
+      preds.append(DM_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:125
+      DMv = DM_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:31
+      def DM_psicdm(z, params):
+  psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py:47
+      DM = DM_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:38
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:126
+      DMv = DM_psicdm(zi, psicdm_params)
+  psi_continuum_v2/cosmology/background/psicdm.py:69
+      def DM_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+
+[DH_psicdm]
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:32
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:125
+      preds.append(DH_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py:128
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:65
+      DH_psicdm,
+  psi_continuum_v2/analysis/plots/make_publication_plots.py:393
+      DH_p = DH_psicdm(z_model, psicdm) / psicdm.rd
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:33
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:123
+      preds.append(DH_psicdm(zi, psicdm_params) / rd)
+  psi_continuum_v2/analysis/scans/scan_eps_psicdm.py:126
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:38
+      H_psicdm, dL_psicdm, DM_psicdm, DH_psicdm
+  psi_continuum_v2/analysis/tests/eps_best_joint_test.py:127
+      DHv = DH_psicdm(zi, psicdm_params)
+  psi_continuum_v2/cosmology/background/psicdm.py:78
+      def DH_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+
+------------------------------------------------------------------------------
+TEST 3 — Search for published eps0/(1+z) implementation
+------------------------------------------------------------------------------
+
+NO direct implementation of eps0/(1+z) was found in package Python source.
+
+------------------------------------------------------------------------------
+TEST 4 — Files containing PsiCDMParams / eps0
+------------------------------------------------------------------------------
+
+psi_continuum_v2/analysis/check/check_models.py
+psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py
+psi_continuum_v2/analysis/plots/make_publication_plots.py
+psi_continuum_v2/analysis/scans/scan_eps_psicdm.py
+psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py
+psi_continuum_v2/analysis/tests/eps_best_joint_test.py
+psi_continuum_v2/analysis/tests/hz_test_psicdm.py
+psi_continuum_v2/analysis/tests/sn_test_psicdm_pplus.py
+psi_continuum_v2/cosmology/background/psicdm.py
+psi_continuum_v2/cosmology/likelihoods/hz_likelihood.py
+psi_continuum_v2/cosmology/models/__init__.py
+psi_continuum_v2/cosmology/models/psicdm_params.py
+
+Files containing PsiCDM model terms: 12
+
+------------------------------------------------------------------------------
+TEST 5 — Analysis scripts using frozen PsiCDM background
+------------------------------------------------------------------------------
+
+psi_continuum_v2/analysis/check/check_models.py
+    IMPORT line 28: psi_continuum_v2.cosmology.background.psicdm.E_psicdm
+    IMPORT line 28: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 28: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 30: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 109: E_psicdm(...)
+    CALL   line 112: H_psicdm(...)
+    CALL   line 115: dL_psicdm(...)
+    CALL   line 208: E_psicdm(...)
+    CALL   line 189: E_psicdm(...)
+
+psi_continuum_v2/analysis/pipeline/joint_fit_psicdm.py
+    IMPORT line 31: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 31: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 31: psi_continuum_v2.cosmology.background.psicdm.DM_psicdm
+    IMPORT line 31: psi_continuum_v2.cosmology.background.psicdm.DH_psicdm
+    IMPORT line 43: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 59: dL_psicdm(...)
+    CALL   line 76: H_psicdm(...)
+    CALL   line 91: DM_psicdm(...)
+    CALL   line 92: H_psicdm(...)
+    CALL   line 123: DM_psicdm(...)
+    CALL   line 127: DM_psicdm(...)
+    CALL   line 128: DH_psicdm(...)
+    CALL   line 125: DH_psicdm(...)
+
+psi_continuum_v2/analysis/plots/make_publication_plots.py
+    IMPORT line 60: psi_continuum_v2.cosmology.background.psicdm.E_psicdm
+    IMPORT line 60: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 60: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 60: psi_continuum_v2.cosmology.background.psicdm.DM_psicdm
+    IMPORT line 60: psi_continuum_v2.cosmology.background.psicdm.DH_psicdm
+    IMPORT line 74: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 188: E_psicdm(...)
+    CALL   line 449: H_psicdm(...)
+    CALL   line 392: DM_psicdm(...)
+    CALL   line 393: DH_psicdm(...)
+    CALL   line 619: E_psicdm(...)
+    CALL   line 217: dL_psicdm(...)
+    CALL   line 221: dL_psicdm(...)
+
+psi_continuum_v2/analysis/scans/scan_eps_psicdm.py
+    IMPORT line 32: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 32: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 32: psi_continuum_v2.cosmology.background.psicdm.DM_psicdm
+    IMPORT line 32: psi_continuum_v2.cosmology.background.psicdm.DH_psicdm
+    IMPORT line 38: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 54: dL_psicdm(...)
+    CALL   line 71: H_psicdm(...)
+    CALL   line 86: dL_psicdm(...)
+    CALL   line 87: H_psicdm(...)
+    CALL   line 121: DM_psicdm(...)
+    CALL   line 125: DM_psicdm(...)
+    CALL   line 126: DH_psicdm(...)
+    CALL   line 123: DH_psicdm(...)
+
+psi_continuum_v2/analysis/tests/bao_desi_dr2_test.py
+    IMPORT line 21: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 21: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 119: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 32: dL_psicdm(...)
+
+psi_continuum_v2/analysis/tests/eps_best_joint_test.py
+    IMPORT line 37: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 37: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 37: psi_continuum_v2.cosmology.background.psicdm.DM_psicdm
+    IMPORT line 37: psi_continuum_v2.cosmology.background.psicdm.DH_psicdm
+    IMPORT line 52: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 68: dL_psicdm(...)
+    CALL   line 86: H_psicdm(...)
+    CALL   line 101: dL_psicdm(...)
+    CALL   line 102: H_psicdm(...)
+    CALL   line 126: DM_psicdm(...)
+    CALL   line 127: DH_psicdm(...)
+
+psi_continuum_v2/analysis/tests/hz_test_psicdm.py
+    IMPORT line 18: psi_continuum_v2.cosmology.background.psicdm.H_psicdm
+    IMPORT line 20: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 95: H_psicdm(...)
+
+psi_continuum_v2/analysis/tests/sn_test_psicdm_pplus.py
+    IMPORT line 16: psi_continuum_v2.cosmology.background.psicdm.dL_psicdm
+    IMPORT line 19: psi_continuum_v2.cosmology.models.psicdm_params.PsiCDMParams
+    CALL   line 66: dL_psicdm(...)
+
+Analysis scripts connected to PsiCDM: 8
+
+------------------------------------------------------------------------------
+TEST 6 — Main psicdm.py source
+------------------------------------------------------------------------------
+
+   1: # cosmology/background/psicdm.py
+   2: 
+   3: import numpy as np
+   4: from psi_continuum_v2.cosmology.models.psicdm_params import PsiCDMParams
+   5: from psi_continuum_v2.cosmology.constants import C_LIGHT
+   6: 
+   7: 
+   8: def E_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+   9:     """
+  10:     The simplest phenomenological Ψ-deformation of ΛCDM:
+  11: 
+  12:     E^2(z) = [ Ω_m (1+z)^3 + (1-Ω_m) + (1-Ω_m)*eps0*(1+z)^n ] /
+  13:              [ 1 + (1-Ω_m)*eps0 ]
+  14: 
+  15:     Normalized so that E(0) = 1, and reduces to ΛCDM when eps0 = 0.
+  16:     """
+  17:     z = np.asarray(z, dtype=float)
+  18:     Om0 = params.Om0
+  19:     eps0 = params.eps0
+  20:     n = params.n
+  21: 
+  22:     base = Om0 * (1.0 + z) ** 3 + (1.0 - Om0)
+  23:     psi_term = (1.0 - Om0) * eps0 * (1.0 + z) ** n
+  24: 
+  25:     norm0 = 1.0 + (1.0 - Om0) * eps0  # ensures E(0)=1
+  26: 
+  27:     E2 = (base + psi_term) / norm0
+  28:     return np.sqrt(E2)
+  29: 
+  30: 
+  31: def H_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  32:     """
+  33:     H(z) in km/s/Mpc for ΨCDM.
+  34:     """
+  35:     return params.H0 * E_psicdm(z, params)
+  36: 
+  37: 
+  38: def dL_psicdm(z: np.ndarray, params: PsiCDMParams, nz: int = 4000) -> np.ndarray:
+  39:     """
+  40:     Luminosity distance d_L(z) in Mpc for ΨCDM via numerical integral:
+  41: 
+  42:         d_c(z) = c/H0 ∫ dz'/E(z')
+  43:         d_L = (1 + z) * d_c
+  44:     """
+  45:     z = np.asarray(z, dtype=float)
+  46:     z_max = float(np.max(z))
+  47:     if z_max <= 0.0:
+  48:         return np.zeros_like(z)
+  49: 
+  50:     z_grid = np.linspace(0.0, z_max, nz)
+  51:     dz = z_grid[1] - z_grid[0]
+  52: 
+  53:     inv_E = 1.0 / E_psicdm(z_grid, params)
+  54: 
+  55:     # Cumulative trapezoidal integration
+  56:     I = np.zeros_like(z_grid)
+  57:     for i in range(1, len(z_grid)):
+  58:         I[i] = I[i - 1] + 0.5 * (inv_E[i - 1] + inv_E[i]) * dz
+  59: 
+  60:     # d_c(z)
+  61:     d_c_grid = (C_LIGHT / params.H0) * I
+  62:     d_c = np.interp(z, z_grid, d_c_grid)
+  63: 
+  64:     return (1.0 + z) * d_c
+  65: 
+  66: 
+  67: # --- BAO distances for ΨCDM ---
+  68: 
+  69: def DM_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  70:     """
+  71:     Transverse comoving distance for ΨCDM:
+  72:         DM(z) = d_L(z) / (1 + z)
+  73:     """
+  74:     z = np.asarray(z, dtype=float)
+  75:     return dL_psicdm(z, params) / (1.0 + z)
+  76: 
+  77: 
+  78: def DH_psicdm(z: np.ndarray, params: PsiCDMParams) -> np.ndarray:
+  79:     """
+  80:     Radial BAO distance:
+  81:         DH(z) = c / H(z)
+  82:     """
+  83:     z = np.asarray(z, dtype=float)
+  84:     return C_LIGHT / H_psicdm(z, params)
+
+==============================================================================
+AUDIT 02 TRACE SUMMARY
+==============================================================================
+Unique definitions for all target background functions: NO
+Direct published eps0/(1+z) implementation found: NO
+Analysis scripts connected to PsiCDM implementation: 8
+
+AUDIT 02 VERDICT: MANUAL REVIEW REQUIRED
+The source trace is not sufficiently unique for an automatic propagation conclusion.
+
+NOTE: This verdict concerns implementation tracing only. Scientific correctness of individual likelihoods is NOT assessed in Audit 02.
+==============================================================================

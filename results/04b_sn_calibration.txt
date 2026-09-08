@@ -1,0 +1,99 @@
+==============================================================================
+PSI-CONTINUUM v2 — INDEPENDENT AUDIT
+AUDIT 04b: SN CALIBRATION / H0 SEMANTICS
+==============================================================================
+
+Frozen repository : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+N_SN              : 1701
+covariance shape  : (1701, 1701)
+H0 baseline       : 70.0
+Omega_m           : 0.3
+eps grid          : -0.100 .. +0.100
+
+------------------------------------------------------------------------------
+TEST 1 — LCDM raw and offset-profiled likelihood
+------------------------------------------------------------------------------
+
+LCDM raw chi2       = 2609.197130241862
+LCDM profiled chi2  = 1764.192454287994
+LCDM best offset    = -0.105935902771 mag
+chi2 removed by offset = 845.004675953868
+
+------------------------------------------------------------------------------
+TEST 2 — Raw and offset-profiled eps0 scans
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+TEST 3 — Raw versus profiled minima
+------------------------------------------------------------------------------
+
+FROZEN IMPLEMENTATION
+  raw best eps0       = -0.100000
+  raw best chi2       = 2593.278250301160
+  profiled best eps0  = -0.100000
+  profiled best chi2  = 1762.793128166089
+  profiled offset     = -0.105021820951 mag
+
+PUBLISHED V2 EQUATION
+  raw best eps0       = +0.055000
+  raw best chi2       = 1777.594452933170
+  profiled best eps0  = -0.100000
+  profiled best chi2  = 1751.423763569049
+  profiled offset     = -0.314905542216 mag
+
+------------------------------------------------------------------------------
+TEST 4 — Profiled Delta chi2 relative to profiled LCDM
+------------------------------------------------------------------------------
+
+Frozen best profiled Delta chi2    = -1.399326121905
+Published best profiled Delta chi2 = -12.768690718945
+
+------------------------------------------------------------------------------
+TEST 5 — Selected eps0 values
+------------------------------------------------------------------------------
+
+    eps       fr_raw      fr_prof      pub_raw     pub_prof     pub_off
+-------------------------------------------------------------------------
+ -0.100     2593.278     1762.793     9218.204     1751.424   -0.314906
+ -0.050     2601.442     1763.473     5009.130     1755.576   -0.207870
+ +0.000     2609.197     1764.192     2609.202     1764.188   -0.105936
+ +0.030     2613.667     1764.639     1937.558     1771.038   -0.047027
+ +0.050     2616.573     1764.941     1781.801     1776.187   -0.008635
+ +0.055     2617.291     1765.017     1777.594     1777.539   +0.000857
+ +0.075     2620.127     1765.324     1894.265     1783.190   +0.038408
+ +0.100     2623.597     1765.711     2327.630     1790.746   +0.084441
+
+------------------------------------------------------------------------------
+TEST 6 — Calibration contribution to published-spec signal
+------------------------------------------------------------------------------
+
+Published raw best Delta chi2      = -831.602677308691
+Published profiled best Delta chi2 = -12.768690718945
+
+|Delta chi2| removed after profiling = 818.833986589746
+fraction of raw |Delta chi2| removed = 98.464568%
+
+------------------------------------------------------------------------------
+TEST 7 — H(0) semantics at raw published best fit
+------------------------------------------------------------------------------
+
+baseline H_Lambda(0) = 70.000000
+raw published best eps0 = +0.055000
+H_Psi(0) implied by published equation = 73.850000
+
+==============================================================================
+AUDIT 04b SUMMARY
+==============================================================================
+
+This audit separates an overall SN magnitude/calibration offset from redshift-dependent distance-shape information.
+
+Raw published-spec result:
+  eps0 = +0.055000
+  Delta chi2 = -831.602677
+
+Offset-profiled published-spec result:
+  eps0 = -0.100000
+  Delta chi2 = -12.768691
+
+Interpretation must be based on the profiled result when asking whether the enormous raw improvement is primarily an absolute-calibration effect.
+==============================================================================

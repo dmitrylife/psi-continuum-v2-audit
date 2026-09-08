@@ -1,0 +1,100 @@
+==============================================================================
+AUDIT 07 — DESI DR2 BAO
+==============================================================================
+
+Frozen repository:
+/home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+
+SETUP
+------------------------------------------------------------------------------
+N observations : 13
+cov shape      : (13, 13)
+H0             : 70.0
+Om0            : 0.3
+n              : 1.0
+rd             : 147.0
+eps grid       : -0.1 ... 0.1
+grid N         : 201
+
+TEST 1 — covariance diagnostics
+------------------------------------------------------------------------------
+max |C-C^T|    : 0.000000000000e+00
+min eigenvalue : 5.789986870000e-03
+max eigenvalue : 6.764084362676e-01
+positive def.  : True
+STATUS          : PASS
+
+TEST 2 — frozen LCDM
+------------------------------------------------------------------------------
+chi2 LCDM      : 40.298419969637
+reference      : 40.298419970000
+difference     : -3.629239131442e-10
+STATUS         : PASS
+
+TEST 3 — eps=0 null limit
+------------------------------------------------------------------------------
+LCDM chi2          : 40.298419969637
+frozen eps=0 chi2  : 40.298419969637
+published eps=0    : 40.298423869593
+max vector diff frozen/LCDM: 0.000000000000e+00
+max vector diff pub/LCDM   : 2.687087814479e-07
+frozen null STATUS : PASS
+pub null STATUS    : PASS
+
+TEST 4 — DESI-only epsilon scans
+------------------------------------------------------------------------------
+FROZEN:
+  best eps       : +0.100000
+  best chi2      : 20.624284591936
+  delta chi2     : -19.674135377701
+  boundary       : True
+
+PUBLISHED EQUATION:
+  best eps       : -0.022000
+  best chi2      : 12.327473737159
+  delta chi2     : -27.970946232478
+  boundary       : False
+
+TEST 5 — selected epsilon values
+------------------------------------------------------------------------------
+     eps      chi2 frozen     delta frozen     chi2 published    delta published
+  -0.100      88.48924074     +48.19082077       403.58545968      +363.28703971
+  -0.050      60.39424250     +20.09582253        58.22338429       +17.92496432
+  +0.000      40.29841997      +0.00000000        40.29842387        +0.00000390
+  +0.030      31.70204605      -8.59637392       159.23930915      +118.94088918
+  +0.050      27.30368388     -12.99473609       285.16973786      +244.87131789
+  +0.075      23.21975920     -17.07866077       489.62242951      +449.32400954
+  +0.100      20.62428459     -19.67413538       741.29802347      +700.99960350
+
+TEST 6 — frozen vs published observable vectors
+------------------------------------------------------------------------------
+eps=+0.030  max_rel=2.55171878e-02  rms_rel=2.12132358e-02
+eps=+0.050  max_rel=4.25258803e-02  rms_rel=3.53474686e-02
+eps=+0.075  max_rel=6.37838443e-02  rms_rel=5.30068438e-02
+eps=-0.050  max_rel=4.25408294e-02  rms_rel=3.53896889e-02
+
+TEST 7 — legacy DESI test interpretation
+------------------------------------------------------------------------------
+Legacy test used eps0 = 0.0
+LCDM chi2         : 40.298419969637
+Psi eps=0 chi2    : 40.298419969637
+Delta            : +0.000000000000e+00
+Interpretation    : null-limit equality confirmed
+
+==============================================================================
+AUDIT 07 SUMMARY
+==============================================================================
+DESI data/covariance integrity : PASS
+Frozen LCDM reproduction       : PASS
+Frozen eps=0 null limit         : PASS
+Published eps=0 null limit      : PASS
+
+Frozen best eps                 : +0.100000
+Published-equation best eps     : -0.022000
+Same best epsilon               : False
+Same chi2 curve                 : False
+
+Frozen DESI delta chi2          : -19.674135377701
+Published DESI delta chi2       : -27.970946232478
+
+FINAL STATUS: FROZEN REPRODUCTION PASS / PUBLISHED-SPEC COMPARISON COMPLETED

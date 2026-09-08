@@ -1,0 +1,143 @@
+==============================================================================
+AUDIT 06B — SDSS/BOSS DR12 BAO STATISTICAL IMPACT
+==============================================================================
+
+Frozen repository:
+/home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+
+Fixed parameters:
+H0      = 70.0
+Om0     = 0.3
+n       = 1.0
+rd      = 147.0 Mpc
+rd_fid  = 147.78 Mpc
+rd_fid / rd = 1.005306122449
+rd / rd_fid = 0.994721883881
+
+Data:
+z = [0.38 0.51 0.61]
+data vector:
+[1512.39     81.2087 1975.22     90.9029 2306.68     98.9647]
+covariance shape = (6, 6)
+
+------------------------------------------------------------------------------
+TEST 1 — FROZEN LCDM REPRODUCTION
+------------------------------------------------------------------------------
+Frozen raw LCDM vector:
+[1481.74116078   85.40061967 1921.25587393   92.14737093 2237.11613924
+   97.7994022 ]
+chi2_LCDM_frozen_raw = 11.140641849565
+historical frozen reference = 11.140641850000
+absolute difference       = 4.348610360694e-10
+RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 2 — BOSS CONVENTION EFFECT AT LCDM
+------------------------------------------------------------------------------
+Convention-corrected LCDM vector:
+[1489.60346081   84.94986528 1931.45029285   91.66100641 2248.9865514
+   97.2832056 ]
+
+chi2 frozen raw      = 11.140641849565
+chi2 corrected       = 7.951527983437
+Delta chi2 convention = -3.189113866128
+
+------------------------------------------------------------------------------
+TEST 3 — EPSILON=0 IDENTITIES
+------------------------------------------------------------------------------
+frozen Psi eps=0 vs frozen LCDM     : 0.000000000000e+00
+corrected frozen eps=0 vs corr LCDM : 0.000000000000e+00
+published eps=0 vs corr LCDM        : 5.507224614121e-06
+RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 4 — EPSILON SCANS
+------------------------------------------------------------------------------
+FROZEN RAW:
+  best eps       = +0.100000
+  best chi2      = 10.209832113763
+  chi2(eps=0)   = 11.140641849565
+  Delta chi2     = -0.930809735802
+  boundary       = True
+
+FROZEN BACKGROUND + CORRECT BOSS CONVENTION:
+  best eps       = +0.100000
+  best chi2      = 7.378806658699
+  chi2(eps=0)   = 7.951527983437
+  Delta chi2     = -0.572721324739
+  boundary       = True
+
+PUBLISHED-v2 BACKGROUND + CORRECT BOSS CONVENTION:
+  best eps       = -0.023000
+  best chi2      = 3.017998334413
+  chi2(eps=0)   = 7.951527282356
+  Delta chi2     = -4.933528947943
+  boundary       = False
+
+------------------------------------------------------------------------------
+TEST 5 — SELECTED EPSILON VALUES
+------------------------------------------------------------------------------
+     eps       frozen_raw      frozen_corr     published_corr
+  -0.100     12.474786241      8.875074495       64.664363998
+  -0.075     12.095749388      8.604231647       30.137871835
+  -0.050     11.748721263      8.361570117       10.048189635
+  -0.030     11.492409528      8.186130799        3.460767227
+  +0.000     11.140641850      7.951527983        7.951527282
+  +0.030     10.824844369      7.748189718       28.071712153
+  +0.050     10.632639946      7.628482286       49.371364829
+  +0.055     10.586748119      7.600416457       55.620175385
+  +0.075     10.411415446      7.495229727       84.125504905
+  +0.100     10.209832114      7.378806659      127.226793143
+
+------------------------------------------------------------------------------
+TEST 6 — EFFECT DECOMPOSITION AT EPS=+0.05
+------------------------------------------------------------------------------
+frozen raw                       = 10.632639946012
+frozen + convention correction   = 7.628482285814
+published + convention correction= 49.371364828556
+
+BAO convention contribution (frozen corrected - raw) = -3.004157660197
+background-law contribution (published corrected - frozen corrected) = +41.742882542741
+total raw->published corrected = +38.738724882544
+
+historical frozen BAO @ eps=.05 = 10.632639950000
+audit frozen raw @ eps=.05      = 10.632639946012
+difference                         = -3.988466446003e-09
+
+------------------------------------------------------------------------------
+TEST 7 — MODEL VECTOR COMPARISON AT EPS=+0.05
+------------------------------------------------------------------------------
+data:
+[1512.39     81.2087 1975.22     90.9029 2306.68     98.9647]
+
+frozen raw:
+[1482.22944291   85.29537108 1922.48730251   91.94675507 2239.15994924
+   97.50926164]
+
+frozen convention-corrected:
+[1490.09433383   84.84517221 1932.68825554   91.46144942 2251.04120611
+   96.99459644]
+
+published-v2 convention-corrected:
+[1428.75219675   88.02775895 1855.80406852   94.69613907 2163.47273408
+  100.30442316]
+
+relative frozen convention correction:
+[ 0.00530612 -0.00527812  0.00530612 -0.00527812  0.00530612 -0.00527812]
+
+relative published-vs-frozen corrected:
+[-0.04116661  0.03751052 -0.03978096  0.0353667  -0.03890132  0.03412383]
+
+==============================================================================
+AUDIT 06B SUMMARY
+==============================================================================
+Frozen SDSS likelihood reproduction: PASS
+epsilon=0 consistency: PASS
+Raw frozen vs convention-corrected frozen same best epsilon: True
+Corrected frozen vs corrected published same best epsilon: False
+
+Interpretation:
+1. The frozen SDSS DR12 numerical likelihood is first reproduced exactly before any correction is introduced.
+2. The BOSS rd_fid/rd convention effect is isolated from the PsiCDM background-law effect.
+3. The published-v2 curve changes only the background H(z) law and its derived DM(z); the data vector and covariance are unchanged.
+4. Any shift of the best epsilon between frozen and published curves therefore cannot be attributed to a different dataset or covariance.

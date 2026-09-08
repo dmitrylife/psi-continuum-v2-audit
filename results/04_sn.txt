@@ -1,0 +1,106 @@
+==============================================================================
+PSI-CONTINUUM v2 — INDEPENDENT AUDIT
+AUDIT 04: PANTHEON+SH0ES HF SUPERNOVA LIKELIHOOD
+==============================================================================
+
+Frozen repository : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2
+Data directory    : /home/dmitry/Документы/НАУКА/Ψ-Проект/Теория_Ψ/github/psi-continuum-v2/data/pantheon_plus
+N_SN              : 1701
+covariance shape  : (1701, 1701)
+H0                : 70.0
+Omega_m           : 0.3
+n                 : 1.0
+eps grid points   : 81
+eps range         : -0.1000 .. +0.1000
+
+------------------------------------------------------------------------------
+TEST 1 — Reproduce frozen LCDM Pantheon+ result
+------------------------------------------------------------------------------
+
+computed chi2_LCDM  = 2609.197130241862
+reference chi2_LCDM = 2609.197130240000
+difference          = +1.861735654529e-09
+
+TEST 1 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 2 — Frozen PsiCDM eps0=0 null limit
+------------------------------------------------------------------------------
+
+chi2_LCDM        = 2609.197130241862
+chi2_Psi(eps=0) = 2609.197130241862
+difference       = +0.000000000000e+00
+
+TEST 2 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 3 — Reproduce frozen PsiCDM SN scan
+------------------------------------------------------------------------------
+
+computed best eps0 = -0.100000
+computed best chi2 = 2593.278250301160
+computed Delta chi2 = -15.918879940702
+minimum boundary   = YES
+
+reference best eps0 = -0.100000
+reference best chi2 = 2593.278250300000
+
+TEST 3 RESULT: PASS
+
+------------------------------------------------------------------------------
+TEST 4 — Published-v2 equation SN scan
+------------------------------------------------------------------------------
+
+best eps0        = +0.055000
+best chi2        = 1777.594452933170
+Delta chi2       = -831.602677308691
+minimum boundary = NO
+
+------------------------------------------------------------------------------
+TEST 5 — Frozen vs published-spec chi2 at selected eps0
+------------------------------------------------------------------------------
+
+    eps0      chi2_frozen         chi2_pub       pub-frozen       Dchi2_fr      Dchi2_pub
+--------------------------------------------------------------------------------------------
+  -0.100      2593.278250      9218.204125     +6624.925875     -15.918880   +6609.006995
+  -0.050      2601.441835      5009.130156     +2407.688321      -7.755295   +2399.933026
+  +0.000      2609.197130      2609.201762        +0.004632      +0.000000      +0.004632
+  +0.030      2613.666544      1937.558120      -676.108423      +4.469413    -671.639010
+  +0.050      2616.573237      1781.800789      -834.772448      +7.376107    -827.396341
+  +0.075      2620.127482      1894.265109      -725.862373     +10.930352    -714.932021
+  +0.100      2623.596698      2327.629734      -295.966964     +14.399568    -281.567396
+
+------------------------------------------------------------------------------
+TEST 6 — Statistical impact of model mismatch
+------------------------------------------------------------------------------
+
+Frozen best eps0     = -0.100000
+Published best eps0  = +0.055000
+Best-eps shift       = +0.155000
+
+Frozen best Delta chi2    = -15.918880
+Published best Delta chi2 = -831.602677
+
+Maximum |chi2_pub-chi2_frozen| = 6624.925875
+at eps0 = -0.100000
+
+Same best eps0 = NO
+Same chi2 curve = NO
+
+==============================================================================
+AUDIT 04 SUMMARY
+==============================================================================
+
+Frozen LCDM reproduction: PASS
+Frozen eps0=0 null limit: PASS
+Frozen SN scan reproduction: PASS
+
+FROZEN SN PIPELINE: PASS
+
+PUBLISHED-SPEC IMPACT ON SN: DETECTED
+Changing only the background relation from the frozen implementation to the published v2 equation changes the Pantheon+ chi2(eps0) curve.
+
+WARNING: frozen SN-only minimum is on the eps0 scan boundary.
+
+NOTE: This audit preserves the frozen v2 SN data, covariance matrix, distance-modulus conversion, and chi2 definition. Only the background distance relation is changed in the published-spec comparison.
+==============================================================================
