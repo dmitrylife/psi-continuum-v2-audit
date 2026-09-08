@@ -43,7 +43,7 @@ The numerical dependency chain from the frozen ΨCDM background through
 H(z), luminosity/angular distances and the analysis scripts was
 traced. No direct implementation of the published
 (ε₀/(1+z)) factor was found in the package
-background path. A local DESI wrapper reconstructs (D_M=d_L/(1+z)) but
+background path. A local DESI wrapper reconstructs D_M=d_L/(1+z) but
 does not introduce an independent background law.
 
 **Conclusion:** the discrepancy of Audit 01 feeds the actual frozen
@@ -53,11 +53,11 @@ analysis pipeline.
 
 **Status: INTERNAL PASS / PUBLISHED-SPEC FAIL**
 
-Frozen distance identities are internally consistent. Frozen (d_L)
+Frozen distance identities are internally consistent. Frozen d_L
 agrees with an independent integration of frozen H(z) at roughly
-(2.8×10^{-6}) relative accuracy, and the ΛCDM null limit
+2.8×10⁻⁶ relative accuracy, and the ΛCDM null limit
 passes. For non-zero ε, distances derived from the published equation
-differ at the percent level; for ε=0.03, (d_L) differs by about 3% at
+differ at the percent level; for ε=0.03, d_L differs by about 3% at
 low z and about 2% by z=3.
 
 **Conclusion:** the distance layer correctly propagates the frozen
@@ -84,13 +84,13 @@ $$
 
  Using the literal published background in the same raw frozen
 likelihood gives a radically different curve, with an unprofiled minimum
-near ε=+0.055 and (Δχ²≈-831.60).
+near ε=+0.055 and Δχ²≈-831.60.
 Audit 04b tests the calibration origin of this enormous raw change.
 
 **Conclusion:** frozen SN is reproducible, but frozen and published
 backgrounds do not generate the same SN likelihood curve.
 
-## Audit 04b --- Pantheon+ SN calibration and (H₀) semantics
+## Audit 04b --- Pantheon+ SN calibration and H₀ semantics
 
 **Status: CALIBRATION EFFECT CONFIRMED / RESIDUAL SHAPE EFFECT DETECTED
 / BEST-FIT UNRESOLVED**
@@ -124,14 +124,14 @@ $$
 $$
 
 
-Thus, profiling removes approximately (818.83) units of the apparent
-χ² improvement, corresponding to (98.46%) of its original
+Thus, profiling removes approximately 818.83 units of the apparent
+χ² improvement, corresponding to 98.46% of its original
 magnitude.
 
 This demonstrates that the extremely large unprofiled improvement is
 dominated by an absolute SN calibration/normalization effect. In
 particular, the raw published-spec minimum at
-(ε₀=+0.055) implies
+ε₀=+0.055 implies
 
 
 $$
@@ -145,21 +145,21 @@ for the adopted baseline
 
 A residual redshift-dependent effect remains after removal of the global
 offset. The published-spec model reaches
-(Δχ²_prof≈-12.77),
+Δχ²_prof≈-12.77,
 whereas the frozen implementation reaches only
-(Δχ²_prof≈-1.40)
+Δχ²_prof≈-1.40
 over the same ε₀ interval. Therefore, the
 discrepancy between the published equation and the frozen implementation
-cannot be attributed solely to their different normalization at (z=0);
+cannot be attributed solely to their different normalization at z=0;
 their predicted distance-redshift shapes also differ.
 
 However, the profiled published-spec minimum occurs at the lower scan
-boundary, (ε₀=-0.100). Consequently, this audit does
+boundary, ε₀=-0.100. Consequently, this audit does
 not determine a best-fit value of ε₀ for the
 published model.
 
 **Conclusion:** the apparent
-(Δχ²≈-831.6) improvement must not
+Δχ²≈-831.6 improvement must not
 be interpreted as evidence for the published ΨCDM dynamics. It is
 predominantly an absolute-calibration effect. A smaller but non-zero
 shape-dependent difference remains and must be treated separately. No
@@ -198,7 +198,7 @@ Both the ΛCDM calculation and the frozen ΨCDM scan were reproduced to
 numerical precision.
 
 The audit then repeated the same likelihood calculation with the same
-data, uncertainties, (H₀), (Ωₘ), and
+data, uncertainties, H₀, Ωₘ, and
 ε₀ grid, changing only the ΨCDM background
 relation to the published v2 defining equation,
 
@@ -220,10 +220,10 @@ $$
 
 
 Thus the shallow non-zero minimum at
-(ε₀≈+0.055) found by the frozen H(z)
+ε₀≈+0.055 found by the frozen H(z)
 analysis is not reproduced when the published defining equation is used.
 
-At the frozen best-fit value (ε₀=+0.055), the
+At the frozen best-fit value ε₀=+0.055, the
 published equation instead gives
 
 
@@ -278,7 +278,7 @@ $$
 
 
 The frozen v2 loader and diagnostic code instead describe these
-quantities as (D_M/r_s) and (H(z)r_s), which is not the convention
+quantities as D_M/r_s and H(z)r_s, which is not the convention
 represented by the numerical data vector.
 
 More importantly, the frozen joint likelihood constructs its SDSS model
@@ -310,7 +310,7 @@ $$
 
 
 The frozen parameter classes instead adopt r_d=147.0 Mpc, whereas the
-BOSS DR12 fiducial value associated with this data vector is (147.78)
+BOSS DR12 fiducial value associated with this data vector is 147.78
 Mpc.
 
 **Conclusion:** the SDSS DR12 data vector is correctly recognizable as
@@ -332,7 +332,7 @@ $$
 $$
 
  agreeing with the historical frozen
-reference to (4.35×10^{-10}).
+reference to 4.35×10⁻¹⁰.
 
 Applying the BOSS fiducial sound-horizon convention while retaining the
 frozen background gives 
@@ -387,7 +387,7 @@ CONFIRMED**
 
 The DESI DR2 Gaussian BAO likelihood was independently reconstructed
 using the frozen 13-element data vector and its full
-(13×13) covariance matrix. The covariance is symmetric and
+13×13 covariance matrix. The covariance is symmetric and
 positive definite. The frozen ΛCDM value is reproduced to numerical
 precision:
 
@@ -426,11 +426,11 @@ $$
 $$
 
 
-At (ε₀=+0.05), the frozen implementation gives
-(χ²=27.30368388) and
-(Δχ²=-12.99474), whereas the published
-equation gives approximately (χ²=285.16974) and
-(Δχ²=+244.87132).
+At ε₀=+0.05, the frozen implementation gives
+χ²=27.30368388 and
+Δχ²=-12.99474, whereas the published
+equation gives approximately χ²=285.16974 and
+Δχ²=+244.87132.
 
 The legacy DESI diagnostic that returned identical ΛCDM and ΨCDM values
 used ε₀=0; its equality is therefore an expected
@@ -486,8 +486,8 @@ $$
 
 
 This differs from the historical frozen reference (2672.423077660000) by
-only (-4.77×10^{-9}). The historical
-(ε₀=+0.05) point is also reproduced:
+only -4.77×10⁻⁹. The historical
+ε₀=+0.05 point is also reproduced:
 
 
 $$
@@ -527,7 +527,7 @@ $$
 
 
 Their sum agrees with the joint Δχ² to
-approximately (7×10^{-13}). Thus the frozen joint
+approximately 7×10⁻¹³. Thus the frozen joint
 improvement is driven overwhelmingly by DESI DR2, partly offset by the
 SN penalty.
 
@@ -545,8 +545,8 @@ $$
 It is not expected to equal the frozen ΛCDM total because this
 comparison branch deliberately applies the corrected SDSS/BOSS
 fiducial-(r_d) convention. The SDSS convention change alone shifts the
-ε₀=0 contribution from (11.14064185) to
-approximately (7.95152728).
+ε₀=0 contribution from 11.14064185 to
+approximately 7.95152728.
 
 The raw published-spec joint comparison reaches a minimum at
 
@@ -572,19 +572,19 @@ $$
 
 The enormous negative total is therefore produced by the raw SN
 normalization/calibration response and is opposed by both BAO datasets.
-Audit 04b independently showed that (98.46%) of the very large raw SN
+Audit 04b independently showed that 98.46% of the very large raw SN
 improvement is removed by profiling one global magnitude offset. The
 published-spec joint branch is consequently a model-definition
 diagnostic, not a statistically valid corrected-v2 parameter inference.
 
 The frozen and published-spec branches have different best-fit
 ε₀ values and different
-(Δχ²ε₀) curves. In both
+Δχ²(ε₀) curves. In both
 branches, the joint total equals the sum of the four independently
 reconstructed components to machine precision.
 
 **Conclusion:** the complete frozen joint pipeline is numerically
-reproducible. Its minimum at (ε₀=+0.075) is a result
+reproducible. Its minimum at ε₀=+0.075 is a result
 of the frozen implemented background model and frozen likelihood
 conventions. It cannot be attributed to the published v2 defining
 equation.
@@ -674,7 +674,7 @@ likelihood curves.
 A second, independent issue is present in the frozen SDSS/BOSS DR12
 treatment: the standard BOSS fiducial sound-horizon scaling is not
 explicitly applied even though the frozen parameter class uses
-r_d=147.0 Mpc rather than the (147.78) Mpc fiducial value associated
+r_d=147.0 Mpc rather than the 147.78 Mpc fiducial value associated
 with the data vector. This is a smaller effect than the background-law
 discrepancy but is numerically non-negligible.
 
@@ -683,7 +683,7 @@ qualification. When the literal published equation is inserted into the
 raw frozen SN likelihood, most of the very large apparent
 χ² improvement is an absolute calibration/normalization
 effect. Profiling one global magnitude offset removes approximately
-(98.46%) of that raw improvement. A residual shape-dependent effect
+98.46% of that raw improvement. A residual shape-dependent effect
 remains, but its minimum lies at the tested scan boundary; Audit 04b
 therefore does not establish a published-model SN-only best fit.
 
@@ -693,11 +693,11 @@ Accordingly:
     non-zero-ε₀ pipeline are valid descriptions of
     the **implemented frozen model**, not of the published v2 defining
     equation;
--   the frozen joint minimum at (ε₀=+0.075) must not
+-   the frozen joint minimum at ε₀=+0.075 must not
     be reported as a likelihood result for the published equation;
 -   the raw published-spec joint minimum near
-    (ε₀=+0.041) and
-    (Δχ²≈-569) must likewise not
+    ε₀=+0.041 and
+    Δχ²≈-569 must likewise not
     be reported as evidence for the published equation, because it is
     dominated by the known SN calibration response;
 -   a scientifically interpretable fit of the literal published equation
